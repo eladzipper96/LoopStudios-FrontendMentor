@@ -1,0 +1,263 @@
+// ############ Sass Vars #######################
+
+// Sizes
+$side_mobile_size: 7vw;
+$middle_mobile_size: 86vw;
+
+// ############# End of Sass Vars ##################
+
+
+@media screen and (max-width: 500px) {
+
+
+
+    body{
+        grid-template-rows: 100vh repeat(2,min-content) 15vh;
+        grid-template-columns: $side_mobile_size minmax($middle_mobile_size,1fr) $side_mobile_size;
+        grid-row-gap: 15vh;
+        //$side_mobile_size
+    }
+
+    .header-container {
+        grid-template-columns: $side_mobile_size minmax($middle_mobile_size,1fr) $side_mobile_size;
+        background-image: url(./images/mobile/image-hero.jpg);
+
+        .header{
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content;
+    
+            .logo img{
+                width: 15rem;
+            }
+    
+            .slogen{
+                padding: 2rem;
+                width: 85vw;
+                h1{
+                font-size: 5rem;
+                }
+            }
+    
+            .nav_bar{
+                display: none;
+            }
+        
+            .mobile_nav{
+                display: block;
+                grid-column: 2 / 3;
+                //justify-self: start;
+            }
+        }
+    }
+
+    .vr-container {
+        display: grid;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: 1fr;
+        transform: translateX(0rem);
+    
+        .vr_image{
+            justify-self: center;
+            grid-row: 1 / 2 ;
+            grid-column: 1;
+            width: 84vw;
+            margin-bottom: 3rem;
+            
+            img {
+                width: 100%;
+            }
+        }
+    
+        .vr_paragraph-container{
+            grid-column: 1;
+            grid-row: 2 / 3;
+            background-color: white;
+            padding-left: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            
+            .vr_header{
+                font-size: 3rem;
+                font-family: $slogen_font;
+                text-align: center;
+                padding-bottom: 1.5rem;
+                color: $very_dark_gray;
+            }
+    
+            .vr_paragraph{
+                font-family: $nav_font;
+                font-size: 1.5rem;
+                text-align: center;
+                line-height: 2.5rem;
+                color: $dark_gray;
+            }
+        }
+    }
+
+    .our_creations-container{
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        font-family: $slogen_font;
+        color: $very_dark_gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .our_creations-top {
+            margin-bottom: 5rem;
+            //align-self: center;
+    
+            .our_creations-header{
+                font-size: 3.5rem;
+            }
+    
+            .our_creations-button{
+                display: none;
+    
+                h3 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    
+        .our_creations-main{
+            display: flex;
+            flex-direction: column;
+
+    
+            .our_creations-item{
+                display: flex;
+                //background-repeat: no-repeat;
+                background-size: cover;
+                width: 86vw;
+               // overflow: hidden;
+                height: 125px;
+    
+                & h3{
+                    font-size: 2rem;
+                    color: white;
+                    //align-self: end;
+                    padding: 2rem 2rem;
+                }
+            }
+    
+            .item_1{
+                background-image: url(./images/mobile/image-deep-earth.jpg);
+            }
+    
+            .item_2 {
+                background-image: url(./images/mobile/image-night-arcade.jpg)
+            }
+    
+            .item_3 {
+                background-image: url(./images/mobile/image-soccer-team.jpg);
+            }
+    
+            .item_4 {
+                background-image: url(./images/mobile/image-grid.jpg);
+            }
+    
+            .item_5 {
+                background-image: url(./images/mobile/image-from-above.jpg);
+            }
+    
+            .item_6 {
+                background-image: url(./images/mobile/image-pocket-borealis.jpg);
+            }
+    
+            .item_7 {
+                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.658)),url(./images/mobile/image-curiosity.jpg);
+            }
+    
+            .item_8 {
+                background-image: url(./images/mobile/image-fisheye.jpg);
+            }
+
+            .our_creations-button-mobile{
+                display: block;
+                color: black;
+                background-color: white;
+                border-style: solid;
+                border-width: thin;
+                letter-spacing: 0.1rem;
+                align-self: center;
+                padding: 1rem 3rem;
+                
+    
+                h4 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .footer{
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
+        color: white;
+        display: block;
+    
+        .footer-container{
+            //grid-column: 2 / 3;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+
+            .footer-logo{
+                order: 1;
+                align-self: center;
+                padding-top: 5rem;
+                padding-bottom: 1rem;
+                & img{
+                    width: $logo_size/1.5;
+                }
+            }
+    
+            .footer_icons{
+                order: 3;
+                align-self: center;
+                padding-top: 2rem;
+    
+                & img:not(:first-child) {
+                    margin-left: 1rem;
+                }
+    
+                & img{ width: 2rem;
+                }
+            }
+    
+            .footer_nav{
+                order: 2;
+                align-self: center;
+                &-ul {
+                    display: flex;
+                    flex-direction: column;
+        
+                    li:not(:first-child) {
+                        margin-left: 0rem;
+                        margin-top: 2rem;
+                    }
+        
+                    li {
+                        list-style-type: none;
+                        font-size: 1.5rem;
+                        font-family: $nav_font;
+                    }
+                }
+            }
+    
+            .footer_copyright{
+                order: 4;
+                align-self: center;
+                font-family: $nav_font;
+                font-size: 1.4rem;
+                color: $dark_gray;
+                padding-bottom: 4rem;
+            }
+        }
+    }
+
+
+}
